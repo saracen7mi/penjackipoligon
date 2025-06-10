@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>Penjacki Poligon u Kladnju</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        a-scene {
+            width: 90%;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio-bosnian">
+        <source src="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/ttsmaker-file-2025-3-9-11-14-49.mp3?v=1741520440353" type="audio/mpeg">
+    </audio>
+    <audio id="audio-english">
+        <source src="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/ttsmaker-file-2025-3-9-11-16-29.mp3?v=1741520473314" type="audio/mpeg">
+    </audio>
+    <audio id="audio-german">
+        <source src="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/ttsmaker-file-2025-3-9-11-17-54.mp3?v=1741520502018" type="audio/mpeg">
+    </audio>
+    <audio id="audio-italian">
+        <source src="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/ttsmaker-file-2025-3-9-11-19-47.mp3?v=1741520533054" type="audio/mpeg">
+    </audio>
+    <audio id="audio-turkish">
+        <source src="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/ttsmaker-file-2025-3-9-11-21-6.mp3?v=1741520561155" type="audio/mpeg">
+    </audio>
+
+  
+    <a-scene embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;">
+        <a-plane color="#008000" height="3.5" width="6.5" position="0 0.5 -5" opacity="0.9"></a-plane>
+
+       <a-entity 
+            gltf-model="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/grbdrzave3d.glb?v=1741532583166" 
+            position="-2 1 -5" 
+            scale="1 1 1" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+      <a-entity 
+    gltf-model="https://cdn.glitch.global/b5ff81fb-334a-4ba2-b06d-882ea3a95de0/grbopstine3d.glb?v=1741532552052" 
+    position="2 1 -5" 
+    scale="1 1 1" 
+    rotation="0 240 0" 
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+</a-entity>
+      
+      
+      
+  
+
+<a-entity id="eng-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: red" position="-2.5 2 -4.9"
+          text="value: ENG; color: white; align: center; width: 3;">
+</a-entity>
+
+<a-entity id="deu-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: yellow" position="-1 2 -4.9"
+          text="value: DEU; color: black; align: center; width: 3;">
+</a-entity>
+
+<a-entity id="ita-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: blue" position="0.5 2 -4.9"
+          text="value: ITA; color: white; align: center; width: 3;">
+</a-entity>
+
+<a-entity id="tur-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: brown" position="2 2 -4.9"
+          text="value: TUR; color: white; align: center; width: 3;">
+</a-entity>
+
+
+        <a-entity position="0 0.8 -4.9">
+            <a-text value="Sportsko-penjacki poligon Stupari, smesten na teritoriji opstine Kladanj, savrseno je mesto za ljubitelje adrenalinskih sportova i sve one koji žele da unaprede svoje vestine penjanja. Ovaj poligon nudi cetiri razlicite staze za penjanje, prilagođene penjacima svih uzrasta i nivoa strucnosti – od početnika do profesionalaca. Staze su dizajnirane da izazovu fizicke i mentalne sposobnosti penjaca, a pruzaju i odlicnu priliku za trening i takmicenja.
+Pored penjackih staza, poligon je okruzen prirodnim lepotama, što ga cini idealnim mestom za rekreaciju i opustanje. Posetioci mogu uzivati u aktivnom odmoru, poboljšanju svojih fizickih sposobnosti i, naravno, u druženju sa ljubiteljima ovog sporta. Stupari je postao prepoznatljivo odrediste u opstini Kladanj, koje ne samo da promoviše sport, već i doprinosi razvoju turisticke ponude i zdravog nacina zivota. "
+                    color="#FFFF00" width="5.5" wrap-count="50" align="center" scale="0.5 0.5 0.5">
+            </a-text>
+        </a-entity>
+
+              
+        
+        <!-- Dodani tekst ispod žutog teksta -->
+        <a-entity position="0 -0.8 -4.9" id="location-link">
+            <a-text 
+                value="Lokacija:" 
+                position="-2 0 0.05" 
+                color="#000000"
+                align="center"
+                scale="1.2 1.4 1.4"
+                letter-spacing="1">
+            </a-text>
+           <!-- Crvena pozadina samo za "Klikni ovde" -->
+    <a-plane 
+        color="#FF0000" 
+        height="0.5" 
+        width="1.6" 
+        opacity="0.5" 
+        position="-0.3 0 0.06">
+    </a-plane>
+
+    <!-- "Klikni ovde" na crvenoj pozadini -->
+    <a-text 
+        value="Klikni ovde" 
+        position="-0.4 0 0.06"  
+        color="#000000"
+        align="center"
+        scale="1.2 1.2 1.2" 
+        letter-spacing="1"
+        class="clickable">
+    </a-text>
+          
+          
+        </a-entity>
+
+      
+      
+        <a-entity 
+            gltf-model="" 
+            position="-2 1 -5" 
+            scale="0.5 0.5 0.5" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+        <a-entity 
+            gltf-model="" 
+            position="2 1 -5" 
+            scale="0.5 0.5 0.5" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+        <a-entity camera look-controls position="0 0 0" fov="85">
+            <a-cursor color="#FF0000" radius="0.05"></a-cursor>
+        </a-entity>
+      
+      
+    </a-scene>
+
+    <script>
+        let bosnianAudio = document.getElementById('audio-bosnian');
+        let englishAudio = document.getElementById('audio-english');
+        let germanAudio = document.getElementById('audio-german');
+        let italianAudio = document.getElementById('audio-italian');
+        let turkishAudio = document.getElementById('audio-turkish');
+
+        function stopAllAudio() {
+            [bosnianAudio, englishAudio, germanAudio, italianAudio, turkishAudio].forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        }
+
+        function playAudio(audioElement) {
+            stopAllAudio();
+            audioElement.play();
+        }
+
+        document.getElementById('eng-button').addEventListener('mouseenter', () => playAudio(englishAudio));
+        document.getElementById('deu-button').addEventListener('mouseenter', () => playAudio(germanAudio));
+        document.getElementById('ita-button').addEventListener('mouseenter', () => playAudio(italianAudio));
+        document.getElementById('tur-button').addEventListener('mouseenter', () => playAudio(turkishAudio));
+
+        // window.addEventListener('load', () => {
+        //     bosnianAudio.play().catch(e => console.log("Audio autoplay blokiran: " + e));
+        // });
+      
+      window.addEventListener('load', () => {
+    document.body.addEventListener('click', () => {
+        if (bosnianAudio.paused) {
+            bosnianAudio.play();
+        }
+    }, { once: true }); // Pokreće se samo jednom
+});
+
+    document.getElementById('location-link').addEventListener('click', () => {
+    window.location.href = 'https://www.google.com/maps/dir/?api=1&destination=44.344591963957825, 18.68096449662852 &travelmode=driving';
+});
+
+      
+    </script>
+</body>
+</html>
